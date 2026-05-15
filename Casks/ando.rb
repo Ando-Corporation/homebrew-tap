@@ -1,5 +1,18 @@
 cask "ando" do
   todesktop_app_id = "251226pzrooli"
+  write_install_source_marker = lambda do
+    marker_dir = Pathname.new("~/Library/Application Support/Ando").expand_path
+    installed_at = Time.now.utc.strftime("%Y-%m-%dT%H:%M:%SZ")
+    marker_dir.mkpath
+    (marker_dir/"install-source.json").write <<~JSON
+      {
+        "source": "homebrew-cask",
+        "cask": "ando",
+        "version": "#{version}",
+        "installedAt": "#{installed_at}"
+      }
+    JSON
+  end
 
   arch arm: "arm64", intel: "x64"
 
@@ -27,6 +40,10 @@ cask "ando" do
   depends_on macos: :big_sur
 
   app "Ando.app"
+
+  postflight do
+    write_install_source_marker.call
+  end
 
   uninstall quit: "com.todesktop.251226pzrooli"
 
