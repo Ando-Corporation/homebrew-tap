@@ -16,9 +16,9 @@ cask "ando" do
 
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.17,260514nv30o5to8"
-  sha256 arm:   "b5a032877387f141c4b97275f2a233761de5c95ba7c8b2c86f73e7d9fb50b198",
-         intel: "56773f835ff1546c205f5a6077c2c02636e224c33ac5539b002b4e1f6895aba5"
+  version "1.0.18,2605168y6m0ftnh"
+  sha256 arm:   "0c6dbd64756e976820133065042f7e6da8c027d1d6fede293b6ab53091d363cd",
+         intel: "09de3268fa9172e7694ced0bf024a8eab6ba46801bb92abcf0a261a9aa1ea0dd"
 
   url "https://download.todesktop.com/#{todesktop_app_id}/Ando%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg",
       verified: "download.todesktop.com/#{todesktop_app_id}/"
