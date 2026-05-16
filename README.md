@@ -1,5 +1,9 @@
 # Ando Homebrew Tap
 
+This is the public, Ando-maintained Homebrew tap for Ando desktop releases. It
+is not the upstream `Homebrew/homebrew-cask` entry, so install commands must tap
+`Ando-Corporation/tap` first.
+
 Install the Ando macOS desktop app with Homebrew:
 
 ```bash
