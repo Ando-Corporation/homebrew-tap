@@ -40,3 +40,7 @@ The marker is written from the cask `postflight` block. Homebrew runs that block
 after cask installs, including the install phase of `brew upgrade --cask ando`.
 The cask does not write into `Ando.app`; `brew zap` removes the marker with the
 rest of Ando's Application Support directory.
+
+## License
+
+This tap is available under the MIT License. See [LICENSE](./LICENSE).
