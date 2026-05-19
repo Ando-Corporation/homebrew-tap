@@ -16,9 +16,9 @@ cask "ando" do
 
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.18,2605168y6m0ftnh"
-  sha256 arm:   "0c6dbd64756e976820133065042f7e6da8c027d1d6fede293b6ab53091d363cd",
-         intel: "09de3268fa9172e7694ced0bf024a8eab6ba46801bb92abcf0a261a9aa1ea0dd"
+  version "1.0.19,260519mn9el4utn"
+  sha256 arm:   "d2ae79fa9204d24c783794ec1facb5ffbbdfb45e9145c3ac7009c5fb87965092",
+         intel: "be579a764772a5d3410e6295585a24445dfbb26af43330c5435f85f1738897bf"
 
   url "https://download.todesktop.com/#{todesktop_app_id}/Ando%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg",
       verified: "download.todesktop.com/#{todesktop_app_id}/"
@@ -37,7 +37,7 @@ cask "ando" do
     end
   end
 
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
 
   app "Ando.app"
 
