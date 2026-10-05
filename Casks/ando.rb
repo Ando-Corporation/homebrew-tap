@@ -3,12 +3,11 @@ cask "ando" do
 
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.19,260519mn9el4utn"
-  sha256 arm:   "d2ae79fa9204d24c783794ec1facb5ffbbdfb45e9145c3ac7009c5fb87965092",
-         intel: "be579a764772a5d3410e6295585a24445dfbb26af43330c5435f85f1738897bf"
+  version "1.0.40,260916xjydek6jc"
+  sha256 arm:   "95af84753bcc139077e6a99ca8495c9475a6912806302ccb929d6ee5a9b91bd6",
+         intel: "3f70f2ce44b2252f0083d8e53ceec5aa382c4983d567eb0e15d2814222288a10"
 
-  url "https://download.todesktop.com/#{todesktop_app_id}/Ando%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg",
-      verified: "download.todesktop.com/#{todesktop_app_id}/"
+  url "https://download.todesktop.com/#{todesktop_app_id}/Ando%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg"
   name "Ando"
   desc "AI-native team workspace"
   homepage "https://ando.so/"
