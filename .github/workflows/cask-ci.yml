@@ -18,6 +18,9 @@ jobs:
       - name: Check style
         run: brew style Ando-Corporation/tap/ando
 
+      - name: Test install-source marker
+        run: brew ruby scripts/test-install-source.rb
+
       - name: Audit cask
         run: brew audit --cask --new Ando-Corporation/tap/ando
 
