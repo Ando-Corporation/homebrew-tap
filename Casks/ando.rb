@@ -28,8 +28,8 @@ cask "ando" do
   app "Ando.app"
 
   postflight_steps do
-    mkdir_p "~/Library/Application Support/Ando"
-    write_file "~/Library/Application Support/Ando/install-source.json", <<~JSON
+    mkdir_p "Library/Application Support/Ando", base: :home
+    write_file "Library/Application Support/Ando/install-source.json", <<~JSON, base: :home
       {
         "source": "homebrew-cask",
         "cask": "ando",
