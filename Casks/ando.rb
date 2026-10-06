@@ -1,27 +1,13 @@
 cask "ando" do
   todesktop_app_id = "251226pzrooli"
-  write_install_source_marker = lambda do
-    marker_dir = Pathname.new("~/Library/Application Support/Ando").expand_path
-    installed_at = Time.now.utc.strftime("%Y-%m-%dT%H:%M:%SZ")
-    marker_dir.mkpath
-    (marker_dir/"install-source.json").write <<~JSON
-      {
-        "source": "homebrew-cask",
-        "cask": "ando",
-        "version": "#{version}",
-        "installedAt": "#{installed_at}"
-      }
-    JSON
-  end
 
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.19,260519mn9el4utn"
-  sha256 arm:   "d2ae79fa9204d24c783794ec1facb5ffbbdfb45e9145c3ac7009c5fb87965092",
-         intel: "be579a764772a5d3410e6295585a24445dfbb26af43330c5435f85f1738897bf"
+  version "1.0.48,261005m61chb53i"
+  sha256 arm:   "b038d8723b1257b8d7efbaec43d9f2ef91e6a9fa79a9cf4492fd2e43613a3f24",
+         intel: "2a6eaafb45ab7a01a49a1cae2b59414816b8dbe334ee6237003fc3b75adfbc6e"
 
-  url "https://download.todesktop.com/#{todesktop_app_id}/Ando%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg",
-      verified: "download.todesktop.com/#{todesktop_app_id}/"
+  url "https://download.todesktop.com/#{todesktop_app_id}/Ando%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg"
   name "Ando"
   desc "AI-native team workspace"
   homepage "https://ando.so/"
@@ -37,12 +23,19 @@ cask "ando" do
     end
   end
 
-  depends_on macos: :monterey
+  depends_on macos: :ventura
 
   app "Ando.app"
 
-  postflight do
-    write_install_source_marker.call
+  postflight_steps do
+    mkdir_p "~/Library/Application Support/Ando"
+    write_file "~/Library/Application Support/Ando/install-source.json", <<~JSON
+      {
+        "source": "homebrew-cask",
+        "cask": "ando",
+        "version": "#{version}"
+      }
+    JSON
   end
 
   uninstall quit: "com.todesktop.251226pzrooli"
