@@ -1,26 +1,18 @@
 cask "ando" do
-  todesktop_app_id = "251226pzrooli"
-
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.48,261005m61chb53i"
-  sha256 arm:   "b038d8723b1257b8d7efbaec43d9f2ef91e6a9fa79a9cf4492fd2e43613a3f24",
-         intel: "2a6eaafb45ab7a01a49a1cae2b59414816b8dbe334ee6237003fc3b75adfbc6e"
+  version "1.0.50"
+  sha256 arm:   "cd5b347f21679c8b8db8d4e120614896cdbed05cadbf6f74531ebe99308b05db",
+         intel: "7a95d001efc3e3179bef40b400d3343558cac609d607b615faf1f3bd8292713d"
 
-  url "https://download.todesktop.com/#{todesktop_app_id}/Ando%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg"
+  url "https://updates.ando.so/desktop/production/Ando-#{version}-#{arch}-mac.dmg"
   name "Ando"
   desc "AI-native team workspace"
   homepage "https://ando.so/"
 
   livecheck do
-    url "https://download.todesktop.com/#{todesktop_app_id}/latest-mac.yml"
-    strategy :electron_builder do |yaml|
-      match = yaml["files"]&.filter_map do |file|
-        file["url"]&.match(/Build ([^-]+)-(?:arm64|x64)\.dmg/i)
-      end&.first
-
-      "#{yaml["version"]},#{match[1]}" if yaml["version"] && match
-    end
+    url "https://updates.ando.so/desktop/production/latest-mac.yml"
+    strategy :electron_builder
   end
 
   depends_on macos: :ventura
