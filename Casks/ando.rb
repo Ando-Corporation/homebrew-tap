@@ -1,9 +1,9 @@
 cask "ando" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.61"
-  sha256 arm:   "5a1de256d15d5eda421ce91dec8f1753468e097ad0c7ad1f1050ddad9c53766a",
-         intel: "004b8cf9d2e250300be4baa5bf52c566f5e20974199192735a01af17f4b5e453"
+  version "1.0.70"
+  sha256 arm:   "7a72f454b7da22bef5d6767754f94c23eb630776f456320e962d363671327bbd",
+         intel: "9862b4ab747c9c3a40c91cc58c4328a9c25c4f2346b974f4fe75ecb124101b36"
 
   url "https://updates.ando.so/desktop/production/Ando-#{version}-#{arch}-mac.dmg"
   name "Ando"
@@ -15,6 +15,7 @@ cask "ando" do
     strategy :electron_builder
   end
 
+  auto_updates true
   depends_on macos: :ventura
 
   app "Ando.app"
