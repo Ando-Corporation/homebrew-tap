@@ -12,8 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Homebrew 7 refuses to load a non-official tap until it is trusted.
       - name: Tap local checkout
-        run: brew tap Ando-Corporation/tap "$GITHUB_WORKSPACE"
+        run: |
+          brew tap Ando-Corporation/tap "$GITHUB_WORKSPACE"
+          brew trust --tap Ando-Corporation/tap
 
       - name: Check style
         run: brew style Ando-Corporation/tap/ando
