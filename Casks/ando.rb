@@ -1,9 +1,9 @@
 cask "ando" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.95"
-  sha256 arm:   "56b25be83f68ec8b5b792e6262a8058c24bf54ce0bc33b2a80fbe4a7a418b597",
-         intel: "17cd63971e08eca1a87df4591ef5c30061b97283c20395e5fb11e86cdcfdc6e3"
+  version "1.0.96"
+  sha256 arm:   "9a5f431fd346937b3605308a9362d3f5bbe4b22c519e5cf301d2d140b5e9acce",
+         intel: "2c5290727468537ff1674226d04fa63bb3f4cbcc4e9abd669b0310f5a77ac89c"
 
   url "https://updates.ando.so/desktop/production/Ando-#{version}-#{arch}-mac.dmg"
   name "Ando"
